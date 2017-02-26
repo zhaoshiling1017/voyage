@@ -6,7 +6,7 @@
 
     <groupId>com.lenzhao</groupId>
     <artifactId>voyage-framework</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
     <name>Voyage RPC</name>
     <description>Voyage RPC</description>
