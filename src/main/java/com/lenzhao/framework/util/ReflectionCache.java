@@ -53,7 +53,7 @@ public class ReflectionCache {
 
 	public static Method getMethod(String className, String methodName, String[] parameterTypes) throws ClassNotFoundException, SecurityException, NoSuchMethodException {
 		String key = className + "-" + methodName + "-" + join(parameterTypes, ";");
-		logger.info("key: {}", key);
+		//logger.info("key: {}", key);
 		Method method = METHOD_CACHE.get(key);
 		if (null != method) {
 			return method;

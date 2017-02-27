@@ -6,7 +6,7 @@ package com.lenzhao.framework.config;
 public class ServerConfig {
 	private int threadCnt = 100;
 	
-	private int readTimeout = 1000;
+	private int readTimeout = 0;
 
 	private int connectTimeout = 1000;
 	

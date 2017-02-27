@@ -21,7 +21,7 @@ public class ClientConfig {
 	
 	private int maxThreadCount = Runtime.getRuntime().availableProcessors();
 	
-	private int readTimeout = 1000;
+	private int readTimeout = 0;
 	
 	private String tcpNoDelay = "true";
 	
