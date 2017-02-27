@@ -4,13 +4,13 @@ package com.lenzhao.framework.config;
  *服务启动配置，参数有线程数目，超时时间，端口等
  */
 public class ServerConfig {
-	private int threadCnt=100;
+	private int threadCnt = 100;
 	
-	private int readTimeout=1000;
+	private int readTimeout = 1000;
 
-	private int connectTimeout=1000;
+	private int connectTimeout = 1000;
 	
-	private int port=9090;
+	private int port = 9090;
 	
 	public ServerConfig(int port)
 	{
