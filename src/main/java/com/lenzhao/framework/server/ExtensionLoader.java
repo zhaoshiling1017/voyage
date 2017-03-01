@@ -66,13 +66,14 @@ public class ExtensionLoader {
 		List<String> jarPathList = null;
 		if(null == path) {
 			String classpath = System.getProperty("java.class.path");
+			logger.info("java.class.path {}", classpath);
 			String[] paths = classpath.split(Constants.PATH_SEPARATOR);
 			jarPathList = FileUtil.getFirstPath(paths);
 		}
 		else {
 			jarPathList = FileUtil.getFirstPath(path);
 		}
-		if(null == jarPathList) {
+		if(null == jarPathList || jarPathList.size() < 1) {
 		    throw new Exception("no jar fonded from path: " + path);
 		}
 
@@ -116,6 +117,6 @@ public class ExtensionLoader {
 		        }
 		    }
 		}
-		logger.info("finish scan jar");
+		logger.info("finish scan jar" + cachedInstances.size());
 	}
 }

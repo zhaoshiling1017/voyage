@@ -75,13 +75,12 @@ public class FileUtil {
 	 */
 	public static List<File> getFiles(String dir, String... extension) {
 		File f = new File(dir);
+		List<File> fileList = new ArrayList<File>();
 		if (!f.isDirectory()) {
 			return null;
+		} else {
+			getFiles(f, fileList, extension);
 		}
-
-		List<File> fileList = new ArrayList<File>();
-		getFiles(f, fileList, extension);
-		
 		return fileList;
 	}
 	
@@ -101,13 +100,11 @@ public class FileUtil {
 			if(fileList != null) {
 				for(File file : fileList) {
 					if(!fileNameList.contains(file.getName()) && file.getCanonicalPath().startsWith(Constants.ROOT_PATH)) {
-						if(file.getName().endsWith(".class"))
-						{
+						if(file.getName().endsWith(".class")) {
 							jarList.add(file.getCanonicalPath().substring(dir.length()+1));
 							fileNameList.add(file.getName());
 						}
-						else
-						{
+						else {
 							jarList.add(file.getCanonicalPath());
 							fileNameList.add(file.getName());
 						}
@@ -159,7 +156,6 @@ public class FileUtil {
 			if (files[i].isDirectory()) {
 				getFiles(files[i], fileList, extension);
 			} else if (files[i].isFile()) {
-				
 				String fileName = files[i].getName().toLowerCase();
 				boolean isAdd = false;
 				if(extension != null) {

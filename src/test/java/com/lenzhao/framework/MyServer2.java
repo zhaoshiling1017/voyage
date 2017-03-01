@@ -13,8 +13,7 @@ public class MyServer2 implements IServer {
 
 	private static final Logger logger = LoggerFactory.getLogger(MyServer2.class);
 	
-	public String getMsg()
-	{
+	public String getMsg() {
 		logger.info("getMsg echo");
 		return "Hello";
 	}

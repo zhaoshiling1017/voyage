@@ -12,8 +12,7 @@ public class MyServer1 implements IServer {
 
 	private static final Logger logger = LoggerFactory.getLogger(MyServer1.class);
 	
-	public String getMsg()
-	{
+	public String getMsg() {
 		logger.info("getMsg echo");
 		return "Hello";
 	}
@@ -34,7 +33,7 @@ public class MyServer1 implements IServer {
 	@Override
 	public Message echoMsg(int msg) {
 		Message result=new Message();
-		result.setMsg("int:"+msg);
+		result.setMsg("int:" + msg);
 		result.setData(new Date());
 		return result;
 	}
