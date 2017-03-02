@@ -36,7 +36,7 @@ public class ExtensionLoader {
 	public static void init(String path) {
 		if(!isInit) {
 			isInit = true;
-			logger.info("init root path: {}", path);
+			//logger.info("init root path: {}", path);
 			try {
 				scan(path);
 			} catch (Exception e) {
@@ -62,11 +62,11 @@ public class ExtensionLoader {
 	 * @throws Exception
 	 */
 	private static void scan(String path) throws Exception {
-		logger.info("begin scan jar from path: {}", path);
+		//logger.info("begin scan jar from path: {}", path);
 		List<String> jarPathList = null;
 		if(null == path) {
 			String classpath = System.getProperty("java.class.path");
-			logger.info("java.class.path {}", classpath);
+			//logger.info("java.class.path {}", classpath);
 			String[] paths = classpath.split(Constants.PATH_SEPARATOR);
 			jarPathList = FileUtil.getFirstPath(paths);
 		}
@@ -117,6 +117,6 @@ public class ExtensionLoader {
 		        }
 		    }
 		}
-		logger.info("finish scan jar" + cachedInstances.size());
+		//logger.info("finish scan jar: {}", cachedInstances.size());
 	}
 }
